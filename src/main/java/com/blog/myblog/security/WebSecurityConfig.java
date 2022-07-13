@@ -2,6 +2,7 @@ package com.blog.myblog.security;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.builders.WebSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
@@ -10,6 +11,7 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
 @Configuration
 @EnableWebSecurity
+@EnableGlobalMethodSecurity(securedEnabled = true)
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Bean
@@ -22,6 +24,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
         // h2-console 사용에 대한 허용 (CSRF, FrameOptions 무시)
         web
                 .ignoring()
+                .antMatchers("/resources/**")
                 .antMatchers("/h2-console/**");
     }
 
@@ -37,7 +40,6 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .loginPage("/login") //권한이 없는 페이지 접근 시 로그인 페이지로 이동
                 .loginProcessingUrl("/login")
                 .defaultSuccessUrl("/") // 로그인
-                .failureUrl("/user/login?error")
-                .permitAll();
+                .failureUrl("/user/login?error");
     }
 }
