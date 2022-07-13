@@ -1,6 +1,7 @@
-package com.blog.myblog.domain;
+package com.blog.myblog.model;
 
 
+import com.blog.myblog.DTO.PostingRequestDTO;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 

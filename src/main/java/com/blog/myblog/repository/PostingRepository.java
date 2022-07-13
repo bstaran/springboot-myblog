@@ -1,5 +1,6 @@
-package com.blog.myblog.domain;
+package com.blog.myblog.repository;
 
+import com.blog.myblog.model.Posting;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.List;
