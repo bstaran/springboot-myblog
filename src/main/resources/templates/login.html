@@ -12,7 +12,7 @@
 <body>
 <div id="login-form">
     <div id="login-title">하루회고, 또는 TIL 로그인 페이지</div>
-    <form action="/user/login" method="post">
+    <form action="/login" method="post">
         <div class="login-id-label">아이디</div>
         <input type="text" name="username" class="login-input-box">
 
@@ -25,7 +25,7 @@
     <!--            onclick="location.href='https://kauth.kakao.com/oauth/authorize?client_id=e801cc74960c43a96062e2489cb58868&redirect_uri=http://localhost:8080/user/kakao/callback&response_type=code'">-->
     <!--        카카오로 로그인하기-->
     <!--    </button>-->
-    <button id="login-id-btn" onclick="location.href='/user/signup'">
+    <button id="login-id-btn" onclick="location.href='/userLogin/join'">
         회원 가입하기
     </button>
     <div id="login-failed" style="display:none" class="alert alert-danger" role="alert">로그인에 실패하였습니다.</div>

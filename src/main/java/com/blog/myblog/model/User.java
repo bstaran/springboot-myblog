@@ -11,6 +11,14 @@ import javax.persistence.*;
 @NoArgsConstructor
 @Entity
 public class User {
+
+    public User(String username, String password, String nickname, String role) {
+        this.username = username;
+        this.password = password;
+        this.nickname = nickname;
+        this.role = role;
+    }
+
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Id
     private Long id;
@@ -21,9 +29,10 @@ public class User {
     @Column(nullable = false)
     private String password;
 
-    @Column
-    private String email;
-
     @Column(nullable = false)
     private String nickname;
+
+    @Column
+    private String role;
+
 }

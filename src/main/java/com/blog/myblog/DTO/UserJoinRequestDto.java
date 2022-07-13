@@ -9,15 +9,11 @@ public class UserJoinRequestDto {
     private String username;
     private String password;
     private String nickname;
-    private String email;
+
+    private String role;
 
     @Override
     public String toString() {
-        return "UserJoinRequestDto{" +
-                "username='" + username + '\'' +
-                ", password='" + password + '\'' +
-                ", nickname='" + nickname + '\'' +
-                ", email='" + email + '\'' +
-                '}';
+        return super.toString();
     }
 }
